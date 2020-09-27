@@ -277,13 +277,17 @@ html [type="button"],
   /* 2 */
 }
 
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
   /**
        * Remove the inner border and padding in Firefox.
        */
   /**
        * Restore the focus styles unset by the previous rule.
        */
-
+}
 
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
@@ -571,12 +575,19 @@ body {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  bottom: .2%;
-  left: 3%;
+  bottom: 1.4%;
+  left: 4%;
 }
 
 .indicator.active {
   background-color: rgba(194, 255, 255, 0.4);
+}
+
+@media (min-width: 992px) {
+  .indicators {
+    left: 3%;
+    bottom: -.4%;
+  }
 }
 
 @media (max-width: 1199.8px) {
@@ -589,9 +600,27 @@ body {
   .btn-container {
     margin-bottom: 1em;
   }
+  .btn-pause, .btn-prev, .btn-next {
+    width: 38px;
+    font-size: 14px;
+    padding: 8px 14px;
+    margin: 14px;
+  }
+  .indicator {
+    height: 28px;
+    width: 28px;
+  }
+  .indicators {
+    left: 3%;
+    bottom: -.4%;
+  }
 }
 
 @media (max-width: 767.8px) {
+  .indicator {
+    height: 28px;
+    width: 28px;
+  }
   .indicators {
     left: 4%;
   }

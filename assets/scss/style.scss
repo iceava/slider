@@ -99,7 +99,12 @@ margin-bottom: -15px;
     font-size: 22px;
     box-shadow: 3px 3px 5px;
     font-weight: 800;
-    
+    @include lg{
+        width: 38px;
+        font-size: 14px;
+        padding: 8px 14px;
+        margin: 14px;
+    }
     @include md-sm{
         width: 38px;
         font-size: 14px;
@@ -130,6 +135,14 @@ margin-bottom: -15px;
     z-index: 1000;
     box-shadow: 3px 3px 2px rgb(134, 128, 128);
     cursor: pointer;
+    @include lg{
+        height: 28px;
+        width: 28px;
+        }
+    @include md{
+        height: 28px;
+        width: 28px;
+        }
     @include md-sm{
     height: 28px;
     width: 28px;
@@ -146,8 +159,18 @@ margin-bottom: -15px;
      list-style-type: none;
      display:flex;
     position: absolute;
-    bottom:.2%;
-    left:3%;
+    bottom:1.4%;
+    left:4%;
+    @include lg-min{
+        left:3%;
+        bottom: -.4%;
+        
+    }
+    @include lg{
+        left:3%;
+        bottom: -.4%;
+        
+    }
     @include md{
         left:4%
     }
