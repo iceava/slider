@@ -1,3 +1,11 @@
+@import "../../libs/normalize-scss/sass/normalize/import-now";
+@import "variables";
+
+@import "mixins-media";
+
+
+
+
 .slides {
     position: relative;
     padding: 0px;
@@ -7,8 +15,9 @@
 img{
     height: 100vh;
     width: 100vw;
-
-
+@include sm{
+    object-fit: cover;
+}
 }
 body{
     overflow-x: hidden;
@@ -43,23 +52,67 @@ margin-bottom: -15px;
 
 .btn-container{
     position: absolute;
-    bottom:8%;
+    bottom:5%;
     z-index: 1000;
-    left:45vw;
+    left:2%; 
+    margin-bottom: 1em;
+    @include xl{
+        // left:38%;
+        margin-bottom: 1em;
+    }
+  
+    @include lg{
+        // left:28%;
+        margin-bottom: 1em;
+    }
+    @include md-sm{
+        // left:28%;
+        margin-bottom: 1em;
+    }
+
+    @include sm{
+        // left:14%;
+    }
 
 }
+.btn-pause:active{
+    transform: translateY(-4px);
+    
+}
+.btn-prev:active{
+    transform: translateY(-4px);
+ 
+}
+.btn-next:active{
+    transform: translateY(-4px);
+}
 .btn-pause,.btn-prev,.btn-next{
-
+    transition: .3s;
     border: 3px solid #fff;
     display: inline-block;
     cursor: pointer;
     padding: 8px 18px;
     margin: 18px;
+    
     border-radius: 8px;
     color: #fff;
     font-size: 22px;
     box-shadow: 3px 3px 5px;
     font-weight: 800;
+    
+    @include md-sm{
+        width: 38px;
+        font-size: 14px;
+        padding: 8px 14px;
+        margin: 14px;
+    }
+
+    @include sm{
+        width: 32px;
+        font-size: 11px;
+        padding: 5px 11px;
+        margin: 12px;
+    }
 
 }
 
@@ -77,20 +130,44 @@ margin-bottom: -15px;
     z-index: 1000;
     box-shadow: 3px 3px 2px rgb(134, 128, 128);
     cursor: pointer;
+    @include md-sm{
+    height: 28px;
+    width: 28px;
+    }
+    @include sm{
+        height: 18px;
+        width: 28px;
+        }
+ 
+    
 }
 
 .indicators{
      list-style-type: none;
      display:flex;
     position: absolute;
-    bottom:2%;
-    left: 47vw;
+    bottom:.2%;
+    left:3%;
+    @include md{
+        left:4%
+    }
+    @include md-sm{
+        bottom: 0.5%;
+        
+    }
+    @include sm{
+        bottom: 0.8%;
+        left:-3%;
+    }
+    
+    
+  
     
 
 
 }
 
 .indicator.active{
-    background-color: rgb(194, 255, 255);
+    background-color: rgba(194, 255, 255,0.4);
 }
 
